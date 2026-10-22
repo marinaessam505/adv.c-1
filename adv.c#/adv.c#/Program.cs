@@ -1,10 +1,26 @@
 ﻿namespace adv.c_
 {
-    internal class Program
+    #region q1
+
+    // Write a generic class Container<T> with Add and Get methods.
+
+    class Container<T>
     {
-        static void Main(string[] args)
+        private T item;
+
+        public void Add(T value)
         {
-            Console.WriteLine("Hello, World!");
+            item = value;
+        }
+
+        public T Get()
+        {
+            return item;
         }
     }
+
+    #endregion
+
+
+
 }
