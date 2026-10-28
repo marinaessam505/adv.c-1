@@ -109,19 +109,41 @@ namespace adv.c_
     #region q7
 
 
-//    What is the new () constraint? Write an example.
-//The new () constraint requires T to have a public parameterless constructor.
-class Test<T> where T : new()
-    {
-        public T Create()
-        {
-            return new T();
-        }
-    }
+    //    What is the new () constraint? Write an example.
+    //The new () constraint requires T to have a public parameterless constructor.
+    //class Test<T> where T : new()
+    //    {
+    //        public T Create()
+    //        {
+    //            return new T();
+    //        }
+    //    }
 
 
     #endregion
 
 
+
+
+    #region q8  
+
+//    What is the interface constraint? Write an example.
+//The interface constraint requires T to implement a specific interface.
+interface IPrintable
+    {
+        void Print();
+    }
+
+    class Test<T> where T : IPrintable
+    {
+        public void Show(T item)
+        {
+            item.Print();
+        }
+    }
+
+
+
+    #endregion
 
 }
