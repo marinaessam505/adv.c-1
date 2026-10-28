@@ -70,5 +70,21 @@ interface IRepository<T>
 
 
 
-    #endregion 
+    #endregion
+
+
+
+
+
+    #region q5
+//    What is the struct constraint? Write an example.
+//The struct constraint requires T to be a non-nullable value type.
+class Test<T> where T : struct
+    {
+        public T Value;
+    }
+
+
+    #endregion
+
 }
