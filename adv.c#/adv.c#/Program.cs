@@ -47,16 +47,28 @@ namespace adv.c_
 
     #region q3
 
-    //    What is a generic method? Write Swap<T> method.
-    //A generic method is a method that works with different data types using a type parameter.
+    ////    What is a generic method? Write Swap<T> method.
+    ////A generic method is a method that works with different data types using a type parameter.
 
-    static void Swap<T>(ref T a, ref T b)
-    {
-        T temp = a;
-        a = b;
-        b = temp;
-    }
+    //static void Swap<T>(ref T a, ref T b)
+    //{
+    //    T temp = a;
+    //    a = b;
+    //    b = temp;
+    //}
 
     #endregion
 
+    #region q4
+//    What is a generic interface? Write IRepository<T>.
+//A generic interface is an interface that uses a type parameter to work with different data types.
+interface IRepository<T>
+    {
+        void Add(T item);
+        T Get();
+    }
+
+
+
+    #endregion 
 }
