@@ -1,4 +1,7 @@
-﻿namespace adv.c_
+﻿using System.Reflection.Metadata;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace adv.c_
 {
     #region q1
 
@@ -27,17 +30,33 @@
     // What are multiple type parameters? Write Pair<TKey, TValue>.
     //Answer: Multiple type parameters allow a generic class to work with two or more types.
 
-    class Pair<TKey, TValue>
-    {
-        public TKey Key;
-        public TValue Value;
+    //class Pair<TKey, TValue>
+    //{
+    //    public TKey Key;
+    //    public TValue Value;
 
-        public Pair(TKey key, TValue value)
-        {
-            Key = key;
-            Value = value;
-        }
+    //    public Pair(TKey key, TValue value)
+    //    {
+    //        Key = key;
+    //        Value = value;
+    //    }
+    //}
+    #endregion
+
+
+
+    #region q3
+
+    //    What is a generic method? Write Swap<T> method.
+    //A generic method is a method that works with different data types using a type parameter.
+
+    static void Swap<T>(ref T a, ref T b)
+    {
+        T temp = a;
+        a = b;
+        b = temp;
     }
+
     #endregion
 
 }
