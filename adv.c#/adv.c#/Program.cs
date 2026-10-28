@@ -92,15 +92,36 @@ namespace adv.c_
     #region q6
 
 
-//    Q8: What is the class constraint? Write an example.
-//The class constraint requires T to be a reference type.
-class Test<T> where T : class
+    //    Q8: What is the class constraint? Write an example.
+    //The class constraint requires T to be a reference type.
+    //class Test<T> where T : class
+    //    {
+    //        public T Value;
+    //    }
+
+
+    #endregion
+
+
+
+
+
+    #region q7
+
+
+//    What is the new () constraint? Write an example.
+//The new () constraint requires T to have a public parameterless constructor.
+class Test<T> where T : new()
     {
-        public T Value;
+        public T Create()
+        {
+            return new T();
+        }
     }
 
 
     #endregion
+
 
 
 }
