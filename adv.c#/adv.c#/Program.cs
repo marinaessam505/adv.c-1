@@ -60,13 +60,13 @@ namespace adv.c_
     #endregion
 
     #region q4
-//    What is a generic interface? Write IRepository<T>.
-//A generic interface is an interface that uses a type parameter to work with different data types.
-interface IRepository<T>
-    {
-        void Add(T item);
-        T Get();
-    }
+    //    What is a generic interface? Write IRepository<T>.
+    //A generic interface is an interface that uses a type parameter to work with different data types.
+    //interface IRepository<T>
+    //    {
+    //        void Add(T item);
+    //        T Get();
+    //    }
 
 
 
@@ -77,14 +77,30 @@ interface IRepository<T>
 
 
     #region q5
-//    What is the struct constraint? Write an example.
-//The struct constraint requires T to be a non-nullable value type.
-class Test<T> where T : struct
+    //    What is the struct constraint? Write an example.
+    //The struct constraint requires T to be a non-nullable value type.
+    //class Test<T> where T : struct
+    //    {
+    //        public T Value;
+    //    }
+
+
+    #endregion
+
+
+
+    #region q6
+
+
+//    Q8: What is the class constraint? Write an example.
+//The class constraint requires T to be a reference type.
+class Test<T> where T : class
     {
         public T Value;
     }
 
 
     #endregion
+
 
 }
