@@ -1,4 +1,5 @@
-﻿using System.Reflection.Metadata;
+﻿using System.Buffers;
+using System.Reflection.Metadata;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace adv.c_
@@ -150,24 +151,50 @@ namespace adv.c_
     #region q9
 
 
-//    What is the base class constraint? Write an example.
-//The base class constraint requires T to inherit from a specific base class.
-class Animal
+    //    What is the base class constraint? Write an example.
+    //The base class constraint requires T to inherit from a specific base class.
+    //class Animal
+    //    {
+    //        public void Eat()
+    //        {
+    //            Console.WriteLine("Eating");
+    //        }
+    //    }
+
+    //    class Test<T> where T : Animal
+    //    {
+    //        public void Show(T item)
+    //        {
+    //            item.Eat();
+    //        }
+    //    }
+
+
+    #endregion
+
+
+
+
+    #region q10
+
+    //Write a SafeList<T> that returns default when the index is invalid.
+class SafeList<T>
     {
-        public void Eat()
+        private List<T> items = new List<T>();
+
+        public void Add(T item)
         {
-            Console.WriteLine("Eating");
+            items.Add(item);
+        }
+
+        public T Get(int index)
+        {
+            if (index < 0 || index >= items.Count)
+                return default(T);
+
+            return items[index];
         }
     }
-
-    class Test<T> where T : Animal
-    {
-        public void Show(T item)
-        {
-            item.Eat();
-        }
-    }
-
 
     #endregion
 
