@@ -127,23 +127,49 @@ namespace adv.c_
 
     #region q8  
 
-//    What is the interface constraint? Write an example.
-//The interface constraint requires T to implement a specific interface.
-interface IPrintable
-    {
-        void Print();
-    }
+    //    What is the interface constraint? Write an example.
+    //The interface constraint requires T to implement a specific interface.
+    //interface IPrintable
+    //    {
+    //        void Print();
+    //    }
 
-    class Test<T> where T : IPrintable
-    {
-        public void Show(T item)
-        {
-            item.Print();
-        }
-    }
+    //    class Test<T> where T : IPrintable
+    //    {
+    //        public void Show(T item)
+    //        {
+    //            item.Print();
+    //        }
+    //    }
 
 
 
     #endregion
+
+
+    #region q9
+
+
+//    What is the base class constraint? Write an example.
+//The base class constraint requires T to inherit from a specific base class.
+class Animal
+    {
+        public void Eat()
+        {
+            Console.WriteLine("Eating");
+        }
+    }
+
+    class Test<T> where T : Animal
+    {
+        public void Show(T item)
+        {
+            item.Eat();
+        }
+    }
+
+
+    #endregion
+
 
 }
